@@ -149,9 +149,9 @@ export default function Home() {
                   <span className="px-3 py-1 bg-emerald-100/50 text-emerald-700 rounded-full">Strapi</span>
                   <span className="px-3 py-1 bg-emerald-100/50 text-emerald-700 rounded-full">Tailwind</span>
                 </div>
-                <Link href="/portfolio/corporate-website" className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all">
+                <a href="https://professional-corporate-website.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all">
                   View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>

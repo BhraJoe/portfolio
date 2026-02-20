@@ -15,6 +15,7 @@ const projects = [
         tech: ['React', 'Node.js', 'MongoDB'],
         gradient: 'from-blue-600 to-indigo-700',
         tagColor: 'bg-blue-100/50 text-blue-700',
+        link: '#',
     },
     {
         id: 2,
@@ -24,6 +25,7 @@ const projects = [
         tech: ['Vue.js', 'Python', 'PostgreSQL'],
         gradient: 'from-purple-600 to-fuchsia-700',
         tagColor: 'bg-purple-100/50 text-purple-700',
+        link: '#',
     },
     {
         id: 3,
@@ -33,6 +35,7 @@ const projects = [
         tech: ['Next.js', 'Strapi', 'Tailwind'],
         gradient: 'from-emerald-500 to-teal-600',
         tagColor: 'bg-emerald-100/50 text-emerald-700',
+        link: 'https://professional-corporate-website.vercel.app/',
     },
     {
         id: 4,
@@ -42,6 +45,7 @@ const projects = [
         tech: ['Next.js', 'Firebase', 'Stripe'],
         gradient: 'from-amber-500 to-orange-600',
         tagColor: 'bg-amber-100/50 text-amber-700',
+        link: 'https://real-estate-red-two.vercel.app/',
     },
     {
         id: 5,
@@ -51,6 +55,7 @@ const projects = [
         tech: ['React', 'Framer Motion', 'Tailwind'],
         gradient: 'from-rose-500 to-pink-600',
         tagColor: 'bg-rose-100/50 text-rose-700',
+        link: 'https://landing-page-sigma-three-73.vercel.app/',
     },
     {
         id: 6,
@@ -60,6 +65,7 @@ const projects = [
         tech: ['React Native', 'Node.js', 'PostgreSQL'],
         gradient: 'from-cyan-500 to-blue-600',
         tagColor: 'bg-cyan-100/50 text-cyan-700',
+        link: '#',
     },
 ];
 
@@ -118,12 +124,20 @@ export default function Portfolio() {
                                         <span key={t} className={`px-3 py-1 rounded-full ${project.tagColor}`}>{t}</span>
                                     ))}
                                 </div>
-                                <Link
-                                    href={`/portfolio/${project.id}`}
-                                    className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all text-sm"
-                                >
-                                    View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
-                                </Link>
+                                {project.link && project.link !== '#' ? (
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all text-sm"
+                                    >
+                                        View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
+                                    </a>
+                                ) : (
+                                    <span className="inline-flex items-center text-gray-400 cursor-not-allowed text-sm">
+                                        View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
+                                    </span>
+                                )}
                             </div>
                         </div>
                     ))}
