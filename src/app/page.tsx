@@ -127,7 +127,7 @@ export default function Home() {
                   <span className="px-3 py-1 bg-purple-100/50 text-purple-700 rounded-full">Python</span>
                   <span className="px-3 py-1 bg-purple-100/50 text-purple-700 rounded-full">PostgreSQL</span>
                 </div>
-                <Link href="/portfolio/saas-dashboard" className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all">
+                <Link href="https://saa-s-dashboard-omega.vercel.app/" className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all">
                   View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
                 </Link>
               </div>

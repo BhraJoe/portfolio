@@ -25,7 +25,7 @@ const projects = [
         tech: ['Vue.js', 'Python', 'PostgreSQL'],
         gradient: 'from-purple-600 to-fuchsia-700',
         tagColor: 'bg-purple-100/50 text-purple-700',
-        link: '#',
+        link: 'https://saa-s-dashboard-omega.vercel.app/',
     },
     {
         id: 3,
