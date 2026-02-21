@@ -110,7 +110,7 @@ export default function Portfolio() {
             <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project) => (
-                        <Link key={project.id} href={`/portfolio/${project.id}`} className="glass-card group overflow-hidden bg-white/60 flex flex-col">
+                        <div key={project.id} className="glass-card group overflow-hidden bg-white/60 flex flex-col cursor-pointer" onClick={() => window.location.href = `/portfolio/${project.id}`}>
                             <div className="h-56 relative overflow-hidden">
                                 <Image
                                     src={project.image}
@@ -139,9 +139,15 @@ export default function Portfolio() {
                                     ))}
                                 </div>
                                 <div className="mt-auto">
+                                    <Link
+                                        href={`/portfolio/${project.id}`}
+                                        className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all text-sm"
+                                    >
+                                        View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
+                                    </Link>
                                 </div>
                             </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
             </section>
