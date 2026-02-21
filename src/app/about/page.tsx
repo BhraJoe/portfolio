@@ -100,7 +100,7 @@ export default function About() {
                             <div key={stat.label} className="text-center p-6 glass-card bg-white/60">
                                 <div className="text-3xl mb-3">{stat.icon}</div>
                                 <h3 className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</h3>
-                                <p className="text-gray-600 text-sm">{stat.label}</p>
+                                <p className="text-white md:text-gray-600 text-sm">{stat.label}</p>
                             </div>
                         ))}
                     </div>
