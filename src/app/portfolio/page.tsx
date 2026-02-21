@@ -65,7 +65,7 @@ const projects = [
         tech: ['React Native', 'Node.js', 'PostgreSQL'],
         gradient: 'from-cyan-500 to-blue-600',
         tagColor: 'bg-cyan-100/50 text-cyan-700',
-        link: '#',
+        link: 'https://mobile-banking-app-opal.vercel.app/',
     },
 ];
 
