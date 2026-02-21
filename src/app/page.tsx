@@ -157,7 +157,9 @@ export default function Home() {
                   </div>
                   <div className="mt-auto">
                     <Link
-                      href={`/portfolio/${project.id === 1 ? 'ecommerce-platform' : project.id === 2 ? 'saas-dashboard' : 'corporate-website'}`}
+                      href={project.link || `/portfolio/${project.id === 1 ? 'ecommerce-platform' : project.id === 2 ? 'saas-dashboard' : 'corporate-website'}`}
+                      target={project.link ? "_blank" : undefined}
+                      rel={project.link ? "noopener noreferrer" : undefined}
                       className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all text-sm"
                     >
                       View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
