@@ -83,7 +83,7 @@ export default function Contact() {
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
                         Let&apos;s <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Work Together</span>
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-xl text-white md:text-gray-600 max-w-2xl mx-auto">
                         Have a project in mind? I&apos;d love to hear about it. Fill out the form below or reach out directly.
                     </p>
                 </div>
@@ -95,8 +95,8 @@ export default function Contact() {
                     {/* Contact Info */}
                     <div className="lg:col-span-2 space-y-8">
                         <div>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-2">Contact Information</h2>
-                            <p className="text-gray-600">Feel free to reach out if you&apos;re looking for a developer, have a question, or just want to connect.</p>
+                            <h2 className="text-2xl font-bold text-white md:text-gray-900 mb-2">Contact Information</h2>
+                            <p className="text-white md:text-gray-600">Feel free to reach out if you&apos;re looking for a developer, have a question, or just want to connect.</p>
                         </div>
 
                         <div className="space-y-6">
@@ -106,13 +106,13 @@ export default function Contact() {
                                         <item.icon className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                                        <h3 className="font-semibold text-white md:text-gray-900">{item.title}</h3>
                                         {item.href ? (
-                                            <a href={item.href} className="text-gray-600 hover:text-primary transition-colors">
+                                            <a href={item.href} className="text-white md:text-gray-600 hover:text-primary transition-colors">
                                                 {item.value}
                                             </a>
                                         ) : (
-                                            <p className="text-gray-600">{item.value}</p>
+                                            <p className="text-white md:text-gray-600">{item.value}</p>
                                         )}
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@ export default function Contact() {
 
                         {/* Social Links */}
                         <div>
-                            <h3 className="font-semibold text-gray-900 mb-4">Follow Me</h3>
+                            <h3 className="font-semibold text-white md:text-gray-900 mb-4">Follow Me</h3>
                             <div className="flex gap-3">
                                 {socials.map((social) => (
                                     <a
@@ -145,7 +145,7 @@ export default function Contact() {
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                        <label className="block text-sm font-medium text-white md:text-gray-700 mb-2">Full Name *</label>
                                         <input
                                             type="text"
                                             placeholder="John Doe"
@@ -154,7 +154,7 @@ export default function Contact() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                        <label className="block text-sm font-medium text-white md:text-gray-700 mb-2">Email Address *</label>
                                         <input
                                             type="email"
                                             placeholder="john@example.com"
@@ -166,7 +166,7 @@ export default function Contact() {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Project Type *</label>
+                                        <label className="block text-sm font-medium text-white md:text-gray-700 mb-2">Project Type *</label>
                                         <select className="w-full px-4 py-3.5 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-gray-900">
                                             <option value="">Select project type</option>
                                             <option>Website Development</option>
@@ -177,7 +177,7 @@ export default function Contact() {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
+                                        <label className="block text-sm font-medium text-white md:text-gray-700 mb-2">Budget Range</label>
                                         <select className="w-full px-4 py-3.5 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-gray-900">
                                             <option value="">Select budget</option>
                                             <option>$1,000 - $5,000</option>
@@ -189,7 +189,7 @@ export default function Contact() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Timeline</label>
+                                    <label className="block text-sm font-medium text-white md:text-gray-700 mb-2">Timeline</label>
                                     <select className="w-full px-4 py-3.5 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-gray-900">
                                         <option value="">Select timeline</option>
                                         <option>ASAP</option>
@@ -201,7 +201,7 @@ export default function Contact() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Project Description *</label>
+                                    <label className="block text-sm font-medium text-white md:text-gray-700 mb-2">Project Description *</label>
                                     <textarea
                                         placeholder="Tell me about your project, goals, and any specific requirements..."
                                         required
@@ -225,7 +225,7 @@ export default function Contact() {
             {/* Quick Connect Banner */}
             <section className="py-16 bg-accent/30">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <p className="text-gray-600 mb-4">Prefer a direct email?</p>
+                    <p className="text-white md:text-gray-600 mb-4">Prefer a direct email?</p>
                     <a
                         href="mailto:josephatanga25@gmail.com"
                         className="text-2xl md:text-3xl font-bold text-primary hover:text-blue-700 transition-colors"
