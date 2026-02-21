@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,9 +14,9 @@ const projects = [
         category: 'E-commerce',
         description: 'Modern online shopping experience with advanced cart, payment integration, and inventory management.',
         tech: ['React', 'Node.js', 'MongoDB'],
+        image: '/images/projects/ecommerce.png',
         gradient: 'from-blue-600 to-indigo-700',
         tagColor: 'bg-blue-100/50 text-blue-700',
-        link: '#',
     },
     {
         id: 2,
@@ -23,9 +24,9 @@ const projects = [
         category: 'Web Apps',
         description: 'Analytics dashboard with real-time data visualization, reporting tools, and user management.',
         tech: ['Vue.js', 'Python', 'PostgreSQL'],
+        image: '/images/projects/saas.png',
         gradient: 'from-purple-600 to-fuchsia-700',
         tagColor: 'bg-purple-100/50 text-purple-700',
-        link: 'https://saa-s-dashboard-omega.vercel.app/',
     },
     {
         id: 3,
@@ -33,9 +34,9 @@ const projects = [
         category: 'Websites',
         description: 'Professional website with CMS integration, distinct typography, and smooth animations.',
         tech: ['Next.js', 'Strapi', 'Tailwind'],
+        image: '/images/projects/corporate.png',
         gradient: 'from-emerald-500 to-teal-600',
         tagColor: 'bg-emerald-100/50 text-emerald-700',
-        link: 'https://professional-corporate-website.vercel.app/',
     },
     {
         id: 4,
@@ -43,9 +44,9 @@ const projects = [
         category: 'E-commerce',
         description: 'Property listing platform with advanced search, virtual tours, and agent management.',
         tech: ['Next.js', 'Firebase', 'Stripe'],
+        image: '/images/projects/real_estate.png',
         gradient: 'from-amber-500 to-orange-600',
         tagColor: 'bg-amber-100/50 text-amber-700',
-        link: 'https://real-estate-red-two.vercel.app/',
     },
     {
         id: 5,
@@ -53,9 +54,9 @@ const projects = [
         category: 'Landing Pages',
         description: 'High-conversion landing page with A/B testing, analytics integration, and lead capture.',
         tech: ['React', 'Framer Motion', 'Tailwind'],
+        image: '/images/projects/landing.png',
         gradient: 'from-rose-500 to-pink-600',
         tagColor: 'bg-rose-100/50 text-rose-700',
-        link: 'https://landing-page-sigma-three-73.vercel.app/',
     },
     {
         id: 6,
@@ -63,9 +64,9 @@ const projects = [
         category: 'Web Apps',
         description: 'Progressive web app for mobile banking with secure transactions and biometric auth.',
         tech: ['React Native', 'Node.js', 'PostgreSQL'],
+        image: '/images/projects/banking.png',
         gradient: 'from-cyan-500 to-blue-600',
         tagColor: 'bg-cyan-100/50 text-cyan-700',
-        link: 'https://mobile-banking-app-opal.vercel.app/',
     },
 ];
 
@@ -103,8 +104,15 @@ export default function Portfolio() {
             <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project) => (
-                        <div key={project.id} className="glass-card group overflow-hidden bg-white/60">
-                            <div className={`h-56 bg-gradient-to-br ${project.gradient} relative overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
+                        <div key={project.id} className="glass-card group overflow-hidden bg-white/60 flex flex-col">
+                            <div className="h-56 relative overflow-hidden">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
                                 <div className="absolute bottom-4 left-4">
                                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
@@ -112,32 +120,26 @@ export default function Portfolio() {
                                     </span>
                                 </div>
                             </div>
-                            <div className="p-8">
-                                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                            <div className="p-8 flex-1 flex flex-col">
+                                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-600 mb-6 leading-relaxed text-sm">
+                                <p className="text-gray-700 mb-6 leading-relaxed text-sm font-medium line-clamp-2">
                                     {project.description}
                                 </p>
-                                <div className="flex flex-wrap gap-2 mb-6 text-xs font-medium">
+                                <div className="flex flex-wrap gap-2 mb-8 text-xs font-bold uppercase tracking-wider">
                                     {project.tech.map((t) => (
                                         <span key={t} className={`px-3 py-1 rounded-full ${project.tagColor}`}>{t}</span>
                                     ))}
                                 </div>
-                                {project.link && project.link !== '#' ? (
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                <div className="mt-auto">
+                                    <Link
+                                        href={`/portfolio/${project.id}`}
                                         className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all text-sm"
                                     >
                                         View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
-                                    </a>
-                                ) : (
-                                    <span className="inline-flex items-center text-gray-400 cursor-not-allowed text-sm">
-                                        View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
-                                    </span>
-                                )}
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     ))}

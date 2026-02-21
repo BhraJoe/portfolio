@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 function ArrowRightIcon({ className }: { className?: string }) {
   return (
@@ -40,6 +41,36 @@ function UsersIcon({ className }: { className?: string }) {
   );
 }
 
+const featuredProjects = [
+  {
+    id: 1,
+    title: 'E-commerce Platform',
+    category: 'E-commerce',
+    description: 'Modern online shopping experience with advanced features and seamless checkout.',
+    tech: ['React', 'Node.js', 'MongoDB'],
+    image: '/images/projects/ecommerce.png',
+    tagColor: 'bg-blue-100/50 text-blue-700',
+  },
+  {
+    id: 2,
+    title: 'SaaS Dashboard',
+    category: 'Web Apps',
+    description: 'Analytics dashboard with real-time data visualization and reporting tools.',
+    tech: ['Vue.js', 'Python', 'PostgreSQL'],
+    image: '/images/projects/saas.png',
+    tagColor: 'bg-purple-100/50 text-purple-700',
+  },
+  {
+    id: 3,
+    title: 'Corporate Website',
+    category: 'Websites',
+    description: 'Professional website with CMS integration, distinct typography, and animations.',
+    tech: ['Next.js', 'Strapi', 'Tailwind'],
+    image: '/images/projects/corporate.png',
+    tagColor: 'bg-emerald-100/50 text-emerald-700',
+  },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -52,14 +83,14 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full glass border border-blue-200/50 text-blue-600 text-sm font-medium animate-fade-in">
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-semibold animate-fade-in">
             Available for freelance projects
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-8 animate-fade-in animate-delay-100">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-8 animate-fade-in animate-delay-100">
             Building digital <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">masterpieces</span>.
           </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto animate-fade-in animate-delay-200">
+          <p className="text-xl text-gray-700 font-medium mb-10 max-w-2xl mx-auto animate-fade-in animate-delay-200">
             I transform complex problems into minimal, elegant, and high-performing web applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in animate-delay-300">
@@ -89,71 +120,46 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project 1 */}
-            <div className="glass-card group overflow-hidden bg-white/60">
-              <div className="h-64 bg-gradient-to-br from-blue-600 to-indigo-700 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                <div className="absolute inset-0 flex items-center justify-center text-white/20">
-                  <GlobeIcon className="w-32 h-32" />
+            {featuredProjects.map((project) => (
+              <div key={project.id} className="glass-card group overflow-hidden bg-white/60 flex flex-col">
+                <div className="h-64 relative overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
+                  <div className="absolute bottom-4 left-4">
+                    <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
-              </div>
-              <div className="p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">E-commerce Platform</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">Modern online shopping experience with advanced features and seamless checkout.</p>
-                <div className="flex flex-wrap gap-2 mb-6 text-xs font-medium text-gray-500">
-                  <span className="px-3 py-1 bg-blue-100/50 text-blue-700 rounded-full">React</span>
-                  <span className="px-3 py-1 bg-blue-100/50 text-blue-700 rounded-full">Node.js</span>
-                  <span className="px-3 py-1 bg-blue-100/50 text-blue-700 rounded-full">MongoDB</span>
+                <div className="p-8 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm line-clamp-2">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-8 text-xs font-medium">
+                    {project.tech.map((t) => (
+                      <span key={t} className={`px-3 py-1 rounded-full ${project.tagColor}`}>{t}</span>
+                    ))}
+                  </div>
+                  <div className="mt-auto">
+                    <Link
+                      href={`/portfolio/${project.id === 1 ? 'ecommerce-platform' : project.id === 2 ? 'saas-dashboard' : 'corporate-website'}`}
+                      className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all text-sm"
+                    >
+                      View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
+                    </Link>
+                  </div>
                 </div>
-                <Link href="/portfolio/ecommerce-platform" className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all">
-                  View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
-                </Link>
               </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="glass-card group overflow-hidden bg-white/60">
-              <div className="h-64 bg-gradient-to-br from-purple-600 to-fuchsia-700 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                <div className="absolute inset-0 flex items-center justify-center text-white/20">
-                  <BriefcaseIcon className="w-32 h-32" />
-                </div>
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
-              </div>
-              <div className="p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">SaaS Dashboard</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">Analytics dashboard with real-time data visualization and reporting tools.</p>
-                <div className="flex flex-wrap gap-2 mb-6 text-xs font-medium text-gray-500">
-                  <span className="px-3 py-1 bg-purple-100/50 text-purple-700 rounded-full">Vue.js</span>
-                  <span className="px-3 py-1 bg-purple-100/50 text-purple-700 rounded-full">Python</span>
-                  <span className="px-3 py-1 bg-purple-100/50 text-purple-700 rounded-full">PostgreSQL</span>
-                </div>
-                <Link href="https://saa-s-dashboard-omega.vercel.app/" className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all">
-                  View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="glass-card group overflow-hidden bg-white/60">
-              <div className="h-64 bg-gradient-to-br from-emerald-500 to-teal-600 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                <div className="absolute inset-0 flex items-center justify-center text-white/20">
-                  <CodeIcon className="w-32 h-32" />
-                </div>
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
-              </div>
-              <div className="p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">Corporate Website</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">Professional website with CMS integration, distinct typography, and animations.</p>
-                <div className="flex flex-wrap gap-2 mb-6 text-xs font-medium text-gray-500">
-                  <span className="px-3 py-1 bg-emerald-100/50 text-emerald-700 rounded-full">Next.js</span>
-                  <span className="px-3 py-1 bg-emerald-100/50 text-emerald-700 rounded-full">Strapi</span>
-                  <span className="px-3 py-1 bg-emerald-100/50 text-emerald-700 rounded-full">Tailwind</span>
-                </div>
-                <a href="https://professional-corporate-website.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all">
-                  View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="mt-16 text-center">
