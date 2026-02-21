@@ -90,7 +90,7 @@ export default function Services() {
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
                         Services & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Solutions</span>
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-xl text-white md:text-gray-600 max-w-2xl mx-auto">
                         Professional web development services tailored to transform your business and elevate your digital presence.
                     </p>
                 </div>
@@ -104,13 +104,13 @@ export default function Services() {
                             <div className={`w-14 h-14 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-6 text-2xl shadow-lg`}>
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            <h3 className="text-xl font-bold text-white md:text-gray-900 mb-3 group-hover:text-primary transition-colors">
                                 {service.title}
                             </h3>
-                            <p className="text-gray-600 mb-6 leading-relaxed text-sm">{service.description}</p>
+                            <p className="text-white md:text-gray-600 mb-6 leading-relaxed text-sm">{service.description}</p>
                             <ul className="space-y-3 mb-8">
                                 {service.benefits.map((benefit) => (
-                                    <li key={benefit} className="flex items-center text-gray-600 text-sm">
+                                    <li key={benefit} className="flex items-center text-white md:text-gray-600 text-sm">
                                         <CheckIcon className="h-4 w-4 text-emerald-500 mr-2 flex-shrink-0" />
                                         {benefit}
                                     </li>
@@ -131,8 +131,8 @@ export default function Services() {
             <section className="py-24 bg-accent/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Process</h2>
-                        <p className="text-gray-600 max-w-xl mx-auto">A streamlined approach to turning your ideas into reality.</p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-4">My Process</h2>
+                        <p className="text-white md:text-gray-600 max-w-xl mx-auto">A streamlined approach to turning your ideas into reality.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {process.map((item) => (
@@ -140,8 +140,8 @@ export default function Services() {
                                 <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-4">
                                     {item.step}
                                 </div>
-                                <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                                <h3 className="text-lg font-bold text-white md:text-gray-900 mb-3">{item.title}</h3>
+                                <p className="text-white md:text-gray-600 text-sm leading-relaxed">{item.description}</p>
                             </div>
                         ))}
                     </div>
@@ -151,10 +151,10 @@ export default function Services() {
             {/* CTA */}
             <section className="py-20">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-6">
                         Ready to start your project?
                     </h2>
-                    <p className="text-xl text-gray-600 mb-10 max-w-xl mx-auto">
+                    <p className="text-xl text-white md:text-gray-600 mb-10 max-w-xl mx-auto">
                         Let&apos;s discuss how I can help bring your vision to life with clean, performant code.
                     </p>
                     <Link

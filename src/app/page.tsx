@@ -90,7 +90,7 @@ export default function Home() {
             Building digital <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">masterpieces</span>.
           </h1>
-          <p className="text-xl text-gray-700 font-medium mb-10 max-w-2xl mx-auto animate-fade-in animate-delay-200">
+          <p className="text-xl text-white md:text-gray-700 font-medium mb-10 max-w-2xl mx-auto animate-fade-in animate-delay-200">
             I transform complex problems into minimal, elegant, and high-performing web applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in animate-delay-300">
@@ -173,8 +173,8 @@ export default function Home() {
       {/* Services Overview */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Expertise</h2>
-          <p className="text-gray-600">Comprehensive development and design solutions</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-4">My Expertise</h2>
+          <p className="text-white md:text-gray-600">Comprehensive development and design solutions</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">

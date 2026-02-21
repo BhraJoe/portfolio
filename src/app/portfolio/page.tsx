@@ -94,7 +94,7 @@ export default function Portfolio() {
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
                         Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Projects</span>
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-xl text-white md:text-gray-600 max-w-2xl mx-auto">
                         A curated collection of projects showcasing my expertise in full-stack web development.
                     </p>
                 </div>
@@ -149,10 +149,10 @@ export default function Portfolio() {
             {/* CTA */}
             <section className="py-20 bg-accent/30">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-6">
                         Have a project in mind?
                     </h2>
-                    <p className="text-xl text-gray-600 mb-10 max-w-xl mx-auto">
+                    <p className="text-xl text-white md:text-gray-600 mb-10 max-w-xl mx-auto">
                         Let&apos;s discuss how I can help bring your vision to life with clean code and stunning design.
                     </p>
                     <Link
