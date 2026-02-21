@@ -87,7 +87,7 @@ export default function Blog() {
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
                         The <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Blog</span>
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-xl text-white md:text-gray-600 max-w-2xl mx-auto">
                         Thoughts on web development, technology, and building digital products.
                     </p>
                 </div>
@@ -111,11 +111,11 @@ export default function Blog() {
                                 </div>
                             </div>
                             <div className="p-8">
-                                <p className="text-xs text-gray-500 mb-3">{post.date}</p>
-                                <h2 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors leading-snug">
+                                <p className="text-xs text-white md:text-gray-500 mb-3">{post.date}</p>
+                                <h2 className="text-lg font-bold text-white md:text-gray-900 mb-3 group-hover:text-primary transition-colors leading-snug">
                                     {post.title}
                                 </h2>
-                                <p className="text-gray-600 mb-6 leading-relaxed text-sm">{post.excerpt}</p>
+                                <p className="text-white md:text-gray-600 mb-6 leading-relaxed text-sm">{post.excerpt}</p>
                                 <Link
                                     href={`/blog/${post.id}`}
                                     className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all text-sm"
@@ -131,10 +131,10 @@ export default function Blog() {
             {/* Newsletter */}
             <section className="py-20 bg-accent/30">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-6">
                         Subscribe to My Newsletter
                     </h2>
-                    <p className="text-gray-600 mb-10 max-w-xl mx-auto text-lg">
+                    <p className="text-white md:text-gray-600 mb-10 max-w-xl mx-auto text-lg">
                         Get the latest articles and insights delivered directly to your inbox.
                     </p>
                     <form className="max-w-md mx-auto relative">
