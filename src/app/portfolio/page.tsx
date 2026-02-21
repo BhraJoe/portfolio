@@ -27,6 +27,7 @@ const projects = [
         image: '/images/projects/saas.png',
         gradient: 'from-purple-600 to-fuchsia-700',
         tagColor: 'bg-purple-100/50 text-purple-700',
+        link: 'https://saa-s-dashboard-omega.vercel.app/',
     },
     {
         id: 3,
@@ -37,6 +38,7 @@ const projects = [
         image: '/images/projects/corporate.png',
         gradient: 'from-emerald-500 to-teal-600',
         tagColor: 'bg-emerald-100/50 text-emerald-700',
+        link: 'https://professional-corporate-website.vercel.app/',
     },
     {
         id: 4,
@@ -47,6 +49,7 @@ const projects = [
         image: '/images/projects/real_estate.png',
         gradient: 'from-amber-500 to-orange-600',
         tagColor: 'bg-amber-100/50 text-amber-700',
+        link: 'https://real-estate-red-two.vercel.app/',
     },
     {
         id: 5,
@@ -57,6 +60,7 @@ const projects = [
         image: '/images/projects/landing.png',
         gradient: 'from-rose-500 to-pink-600',
         tagColor: 'bg-rose-100/50 text-rose-700',
+        link: 'https://landing-page-sigma-three-73.vercel.app/',
     },
     {
         id: 6,
@@ -67,6 +71,7 @@ const projects = [
         image: '/images/projects/banking.png',
         gradient: 'from-cyan-500 to-blue-600',
         tagColor: 'bg-cyan-100/50 text-cyan-700',
+        link: 'https://mobile-banking-app-opal.vercel.app/',
     },
 ];
 
@@ -149,10 +154,10 @@ export default function Portfolio() {
             {/* CTA */}
             <section className="py-20 bg-accent/30">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                         Have a project in mind?
                     </h2>
-                    <p className="text-xl text-white md:text-gray-600 mb-10 max-w-xl mx-auto">
+                    <p className="text-xl text-gray-600 mb-10 max-w-xl mx-auto">
                         Let&apos;s discuss how I can help bring your vision to life with clean code and stunning design.
                     </p>
                     <Link
