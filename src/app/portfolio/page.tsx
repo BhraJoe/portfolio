@@ -110,7 +110,7 @@ export default function Portfolio() {
             <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project) => (
-                        <div key={project.id} className="glass-card group overflow-hidden bg-white/60 flex flex-col cursor-pointer" onClick={() => window.location.href = `/portfolio/${project.id}`}>
+                        <div key={project.id} className="glass-card group overflow-hidden bg-white/60 flex flex-col">
                             <div className="h-56 relative overflow-hidden">
                                 <Image
                                     src={project.image}
