@@ -110,8 +110,8 @@ export default function About() {
             {/* Skills */}
             <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
-                    <p className="text-gray-600">Technologies I work with to build exceptional digital products.</p>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-4">Technical Skills</h2>
+                    <p className="text-white md:text-gray-600">Technologies I work with to build exceptional digital products.</p>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     {skills.map((skill) => (
