@@ -110,7 +110,7 @@ export default function Portfolio() {
             <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project) => (
-                        <div key={project.id} className="glass-card group overflow-hidden bg-white/60 flex flex-col">
+                        <Link key={project.id} href={`/portfolio/${project.id}`} className="glass-card group overflow-hidden bg-white/60 flex flex-col">
                             <div className="h-56 relative overflow-hidden">
                                 <Image
                                     src={project.image}
@@ -139,15 +139,9 @@ export default function Portfolio() {
                                     ))}
                                 </div>
                                 <div className="mt-auto">
-                                    <Link
-                                        href={`/portfolio/${project.id}`}
-                                        className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all text-sm"
-                                    >
-                                        View Project <ArrowRightIcon className="inline h-4 w-4 ml-1" />
-                                    </Link>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </section>
@@ -155,10 +149,10 @@ export default function Portfolio() {
             {/* CTA */}
             <section className="py-20 bg-accent/30">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-6">
                         Have a project in mind?
                     </h2>
-                    <p className="text-xl text-gray-600 mb-10 max-w-xl mx-auto">
+                    <p className="text-xl text-white md:text-gray-600 mb-10 max-w-xl mx-auto">
                         Let&apos;s discuss how I can help bring your vision to life with clean code and stunning design.
                     </p>
                     <Link

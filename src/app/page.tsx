@@ -50,6 +50,8 @@ const featuredProjects = [
     tech: ['React', 'Node.js', 'MongoDB'],
     image: '/images/projects/ecommerce.png',
     tagColor: 'bg-blue-100/50 text-blue-700',
+    link: 'https://ecommerce-platform-omega.vercel.app/',
+
   },
   {
     id: 2,
@@ -59,6 +61,8 @@ const featuredProjects = [
     tech: ['Vue.js', 'Python', 'PostgreSQL'],
     image: '/images/projects/saas.png',
     tagColor: 'bg-purple-100/50 text-purple-700',
+    link: 'https://saa-s-dashboard-omega.vercel.app/',
+
   },
   {
     id: 3,
@@ -68,6 +72,8 @@ const featuredProjects = [
     tech: ['Next.js', 'Strapi', 'Tailwind'],
     image: '/images/projects/corporate.png',
     tagColor: 'bg-emerald-100/50 text-emerald-700',
+    link: 'https://professional-corporate-website.vercel.app/',
+
   },
 ];
 
