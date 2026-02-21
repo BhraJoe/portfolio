@@ -181,8 +181,8 @@ export default function Home() {
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <CodeIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-white md:text-gray-900 mb-3">Web Development</h3>
-            <p className="text-white md:text-gray-600 text-sm leading-relaxed">Custom websites built with modern technologies like React, Next.js, and TypeScript.</p>
+            <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Web Development</h3>
+            <p className="text-black md:text-gray-600 text-sm leading-relaxed">Custom websites built with modern technologies like React, Next.js, and TypeScript.</p>
           </div>
 
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
