@@ -181,32 +181,32 @@ export default function Home() {
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <CodeIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Web Development</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">Custom websites built with modern technologies like React, Next.js, and TypeScript.</p>
+            <h3 className="text-lg font-bold text-white md:text-gray-900 mb-3">Web Development</h3>
+            <p className="text-white md:text-gray-600 text-sm leading-relaxed">Custom websites built with modern technologies like React, Next.js, and TypeScript.</p>
           </div>
 
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <BriefcaseIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Frontend Arch.</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">Scalable frontend architecture with performance and accessibility in mind.</p>
+            <h3 className="text-lg font-bold text-white md:text-gray-900 mb-3">Frontend Arch.</h3>
+            <p className="text-white md:text-gray-600 text-sm leading-relaxed">Scalable frontend architecture with performance and accessibility in mind.</p>
           </div>
 
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <GlobeIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Backend Systems</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">Robust API development, database design, and server management.</p>
+            <h3 className="text-lg font-bold text-white md:text-gray-900 mb-3">Backend Systems</h3>
+            <p className="text-white md:text-gray-600 text-sm leading-relaxed">Robust API development, database design, and server management.</p>
           </div>
 
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <UsersIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Full-Stack Apps</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">End-to-end application development from concept to deployment.</p>
+            <h3 className="text-lg font-bold text-white md:text-gray-900 mb-3">Full-Stack Apps</h3>
+            <p className="text-white md:text-gray-600 text-sm leading-relaxed">End-to-end application development from concept to deployment.</p>
           </div>
         </div>
       </section>
@@ -262,10 +262,10 @@ export default function Home() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 -z-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">
+          <h3 className="text-3xl font-bold text-white md:text-gray-900 mb-6">
             Ready to start your next project?
           </h3>
-          <p className="text-gray-600 mb-10 max-w-xl mx-auto text-lg">
+          <p className="text-white md:text-gray-600 mb-10 max-w-xl mx-auto text-lg">
             Get the latest insights on web development, design trends, and project case studies directly to your inbox.
           </p>
           <form className="max-w-md mx-auto relative">
