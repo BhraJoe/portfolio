@@ -86,7 +86,7 @@ export default function Home() {
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-semibold animate-fade-in">
             Available for freelance projects
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-8 animate-fade-in animate-delay-100">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white md:text-gray-900 mb-8 animate-fade-in animate-delay-100">
             Building digital <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">masterpieces</span>.
           </h1>
@@ -173,8 +173,8 @@ export default function Home() {
       {/* Services Overview */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-4">My Expertise</h2>
-          <p className="text-white md:text-gray-600">Comprehensive development and design solutions</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-black md:text-gray-900 mb-4">My Expertise</h2>
+          <p className="text-black md:text-gray-600">Comprehensive development and design solutions</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -262,22 +262,22 @@ export default function Home() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 -z-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold text-white md:text-gray-900 mb-6">
+          <h3 className="text-3xl font-bold text-black md:text-gray-900 mb-6">
             Ready to start your next project?
           </h3>
-          <p className="text-white md:text-gray-600 mb-10 max-w-xl mx-auto text-lg">
+          <p className="text-black md:text-gray-600 mb-10 max-w-xl mx-auto text-lg">
             Get the latest insights on web development, design trends, and project case studies directly to your inbox.
           </p>
           <form className="max-w-md mx-auto relative">
-            <div className="flex flex-col sm:flex-row gap-4 p-2 bg-white rounded-full shadow-lg border border-gray-100">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 p-4 sm:p-2 bg-gray-900 sm:bg-white rounded-2xl sm:rounded-full shadow-lg border border-gray-700 sm:border-gray-100">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-6 py-3 bg-transparent border-none focus:ring-0 text-gray-900 placeholder-gray-400 outline-none"
+                className="flex-1 px-6 py-4 sm:py-3 bg-transparent border-none focus:ring-0 text-white sm:text-gray-900 placeholder-gray-400 outline-none w-full"
               />
               <button
                 type="submit"
-                className="px-8 py-3 bg-primary text-white font-medium rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg"
+                className="px-8 py-4 sm:py-3 bg-primary text-white font-medium rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg w-full sm:w-auto"
               >
                 Subscribe
               </button>
