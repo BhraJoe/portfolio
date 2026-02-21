@@ -119,7 +119,7 @@ export default function About() {
                             key={skill.name}
                             className="glass-card p-5 text-center bg-white/60 hover:bg-white/80 group"
                         >
-                            <h4 className="font-semibold text-gray-900 group-hover:text-primary transition-colors">{skill.name}</h4>
+                            <h4 className="font-semibold text-white md:text-gray-900 group-hover:text-primary transition-colors">{skill.name}</h4>
                             <div className="mt-3 w-full bg-gray-200 rounded-full h-1.5">
                                 <div
                                     className="bg-gradient-to-r from-blue-500 to-indigo-600 h-1.5 rounded-full transition-all duration-500"
@@ -134,10 +134,10 @@ export default function About() {
             {/* CTA */}
             <section className="py-20 bg-accent/30">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-6">
                         Let&apos;s build something great together
                     </h2>
-                    <p className="text-xl text-gray-600 mb-10 max-w-xl mx-auto">
+                    <p className="text-xl text-white md:text-gray-600 mb-10 max-w-xl mx-auto">
                         I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                     </p>
                     <Link
