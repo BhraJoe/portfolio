@@ -54,10 +54,10 @@ export default function About() {
                             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
                                 Crafting the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">future</span> of web.
                             </h1>
-                            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                            <p className="text-lg text-white md:text-gray-600 mb-6 leading-relaxed">
                                 Hi, I&apos;m <strong>Atanga Joseph</strong> — a passionate web developer dedicated to building modern, fast, and scalable digital solutions. With years of experience, I specialize in creating responsive websites and applications that help businesses grow.
                             </p>
-                            <p className="text-gray-600 mb-8 leading-relaxed">
+                            <p className="text-white md:text-gray-600 mb-8 leading-relaxed">
                                 My approach combines technical expertise with creative problem-solving. I believe in building long-term relationships through transparent communication, reliable delivery, and exceptional code quality.
                             </p>
                             <div className="flex flex-wrap gap-4">
