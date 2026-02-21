@@ -121,10 +121,10 @@ export default function Portfolio() {
                                 </div>
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
-                                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                                <h3 className="text-xl font-bold text-white md:text-gray-900 mb-4 group-hover:text-primary transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-700 mb-6 leading-relaxed text-sm font-medium line-clamp-2">
+                                <p className="text-white/80 md:text-gray-700 mb-6 leading-relaxed text-sm font-medium line-clamp-2">
                                     {project.description}
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8 text-xs font-bold uppercase tracking-wider">
