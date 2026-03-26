@@ -50,7 +50,7 @@ const featuredProjects = [
     tech: ['React', 'Node.js', 'MongoDB'],
     image: '/images/projects/ecommerce.png',
     tagColor: 'bg-blue-100/50 text-blue-700',
-    link: 'https://ecommerce-platform-omega.vercel.app/',
+    link: 'https://shades-ruddy.vercel.app/',
 
   },
   {

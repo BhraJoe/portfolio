@@ -17,7 +17,7 @@ const projects = [
         image: '/images/projects/ecommerce.png',
         gradient: 'from-blue-600 to-indigo-700',
         tagColor: 'bg-blue-100/50 text-blue-700',
-        link: 'https://ecommerce-platform-omega.vercel.app/',
+        link: 'https://shades-ruddy.vercel.app/',
     },
     {
         id: 2,
