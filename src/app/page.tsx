@@ -41,6 +41,27 @@ function UsersIcon({ className }: { className?: string }) {
   );
 }
 
+function ShieldCheckIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+function PaletteIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+      <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+      <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+      <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+    </svg>
+  );
+}
+
 const featuredProjects = [
   {
     id: 1,
@@ -184,7 +205,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-black md:text-gray-900 mb-4">My Expertise</h2>
           <p className="text-black md:text-gray-600">Comprehensive development and design solutions</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <CodeIcon className="h-7 w-7 text-primary" />
@@ -215,6 +236,22 @@ export default function Home() {
             </div>
             <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Full-Stack Apps</h3>
             <p className="text-black md:text-gray-600 text-sm leading-relaxed">End-to-end application development from concept to deployment.</p>
+          </div>
+
+          <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+              <ShieldCheckIcon className="h-7 w-7 text-primary" />
+            </div>
+            <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Quality Assurance</h3>
+            <p className="text-black md:text-gray-600 text-sm leading-relaxed">Rigorous testing methodologies to ensure bug-free and smooth software performance.</p>
+          </div>
+
+          <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+              <PaletteIcon className="h-7 w-7 text-primary" />
+            </div>
+            <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Logo & Flyer Design</h3>
+            <p className="text-black md:text-gray-600 text-sm leading-relaxed">Creative visual identity solutions, crafting memorable logos and impactful flyers.</p>
           </div>
         </div>
       </section>

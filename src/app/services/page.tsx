@@ -65,6 +65,20 @@ const services = [
         icon: '🛒',
         gradient: 'from-cyan-500 to-blue-600',
     },
+    {
+        title: 'Quality Assurance',
+        description: 'Rigorous testing methodologies to ensure bug-free and smooth software performance.',
+        benefits: ['Automated Testing', 'Manual QA', 'Performance Check', 'Bug Tracking'],
+        icon: '✅',
+        gradient: 'from-green-500 to-lime-600',
+    },
+    {
+        title: 'Logo & Flyer Design',
+        description: 'Creative visual identity solutions, crafting memorable logos and impactful flyers.',
+        benefits: ['Custom Logos', 'Brand Identity', 'Print-Ready Flyers', 'Modern Aesthetics'],
+        icon: '✏️',
+        gradient: 'from-violet-500 to-purple-600',
+    },
 ];
 
 const process = [
@@ -98,7 +112,7 @@ export default function Services() {
 
             {/* Services Grid */}
             <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {services.map((service) => (
                         <div key={service.title} className="glass-card p-8 bg-white/60 group">
                             <div className={`w-14 h-14 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-6 text-2xl shadow-lg`}>

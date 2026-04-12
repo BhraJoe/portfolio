@@ -180,10 +180,10 @@ export default function Contact() {
                                         <label className="block text-sm font-medium text-white md:text-gray-700 mb-2">Budget Range</label>
                                         <select className="w-full px-4 py-3.5 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-gray-900">
                                             <option value="">Select budget</option>
-                                            <option>$1,000 - $5,000</option>
-                                            <option>$5,000 - $10,000</option>
-                                            <option>$10,000 - $25,000</option>
-                                            <option>$25,000+</option>
+                                            <option>GH₵1,000 - GH₵5,000</option>
+                                            <option>GH₵5,000 - GH₵10,000</option>
+                                            <option>GH₵10,000 - GH₵25,000</option>
+                                            <option>GH₵25,000+</option>
                                         </select>
                                     </div>
                                 </div>
