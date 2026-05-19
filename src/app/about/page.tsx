@@ -54,10 +54,10 @@ export default function About() {
                             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
                                 Crafting the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">future</span> of web.
                             </h1>
-                            <p className="text-lg text-white md:text-gray-600 mb-6 leading-relaxed">
+                            <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                                 Hi, I&apos;m <strong>Atanga Joseph</strong> — a passionate web developer dedicated to building modern, fast, and scalable digital solutions. With years of experience, I specialize in creating responsive websites and applications that help businesses grow.
                             </p>
-                            <p className="text-white md:text-gray-600 mb-8 leading-relaxed">
+                            <p className="text-foreground/80 mb-8 leading-relaxed">
                                 My approach combines technical expertise with creative problem-solving. I believe in building long-term relationships through transparent communication, reliable delivery, and exceptional code quality.
                             </p>
                             <div className="flex flex-wrap gap-4">
@@ -65,7 +65,7 @@ export default function About() {
                                     View My Work
                                     <ArrowRightIcon className="ml-2 h-4 w-4" />
                                 </Link>
-                                <Link href="/contact" className="inline-flex items-center px-6 py-3 glass text-foreground font-medium rounded-full hover:bg-white/80 transition-all hover:shadow-lg hover:-translate-y-1">
+                                <Link href="/contact" className="inline-flex items-center px-6 py-3 glass text-foreground font-medium rounded-full hover:bg-card/80 transition-all hover:shadow-lg hover:-translate-y-1">
                                     Get In Touch
                                 </Link>
                             </div>
@@ -97,10 +97,10 @@ export default function About() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {stats.map((stat) => (
-                            <div key={stat.label} className="text-center p-6 glass-card bg-white/60">
+                            <div key={stat.label} className="text-center p-6 glass-card bg-card/60">
                                 <div className="text-3xl mb-3">{stat.icon}</div>
                                 <h3 className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</h3>
-                                <p className="text-white md:text-gray-600 text-sm">{stat.label}</p>
+                                <p className="text-foreground/80 text-sm">{stat.label}</p>
                             </div>
                         ))}
                     </div>
@@ -110,16 +110,16 @@ export default function About() {
             {/* Skills */}
             <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-4">Technical Skills</h2>
-                    <p className="text-white md:text-gray-600">Technologies I work with to build exceptional digital products.</p>
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Technical Skills</h2>
+                    <p className="text-foreground/80">Technologies I work with to build exceptional digital products.</p>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     {skills.map((skill) => (
                         <div
                             key={skill.name}
-                            className="glass-card p-5 text-center bg-white/60 hover:bg-white/80 group"
+                            className="glass-card p-5 text-center bg-card/60 hover:bg-card/80 group"
                         >
-                            <h4 className="font-semibold text-white md:text-gray-900 group-hover:text-primary transition-colors">{skill.name}</h4>
+                            <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{skill.name}</h4>
                             <div className="mt-3 w-full bg-gray-200 rounded-full h-1.5">
                                 <div
                                     className="bg-gradient-to-r from-blue-500 to-indigo-600 h-1.5 rounded-full transition-all duration-500"
@@ -134,10 +134,10 @@ export default function About() {
             {/* CTA */}
             <section className="py-20 bg-accent/30">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                         Let&apos;s build something great together
                     </h2>
-                    <p className="text-xl text-white md:text-gray-600 mb-10 max-w-xl mx-auto">
+                    <p className="text-xl text-foreground/80 mb-10 max-w-xl mx-auto">
                         I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                     </p>
                     <Link

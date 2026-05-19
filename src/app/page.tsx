@@ -100,7 +100,7 @@ const featuredProjects = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Abstract Background Elements */}
@@ -113,11 +113,11 @@ export default function Home() {
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-semibold animate-fade-in">
             Available for freelance projects
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white md:text-gray-900 mb-8 animate-fade-in animate-delay-100">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-8 animate-fade-in animate-delay-100">
             Building digital <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">masterpieces</span>.
           </h1>
-          <p className="text-xl text-white md:text-gray-700 font-medium mb-10 max-w-2xl mx-auto animate-fade-in animate-delay-200">
+          <p className="text-xl text-foreground/80 font-medium mb-10 max-w-2xl mx-auto animate-fade-in animate-delay-200">
             I transform complex problems into minimal, elegant, and high-performing web applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in animate-delay-300">
@@ -130,7 +130,7 @@ export default function Home() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-4 glass text-foreground font-medium rounded-full hover:bg-white/80 transition-all hover:shadow-lg hover:-translate-y-1"
+              className="inline-flex items-center px-8 py-4 glass text-foreground font-medium rounded-full hover:bg-card/80 transition-all hover:shadow-lg hover:-translate-y-1"
             >
               Let&apos;s Talk
             </Link>
@@ -142,13 +142,13 @@ export default function Home() {
       <section className="py-24 bg-accent/30 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Work</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">A selection of projects that showcase improved performance and user experience.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Featured Work</h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto">A selection of projects that showcase improved performance and user experience.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project) => (
-              <div key={project.id} className="glass-card group overflow-hidden bg-white/60 flex flex-col">
+              <div key={project.id} className="glass-card group overflow-hidden flex flex-col">
                 <div className="h-64 relative overflow-hidden">
                   <Image
                     src={project.image}
@@ -165,10 +165,10 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-8 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-white md:text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-white/80 md:text-gray-600 mb-6 leading-relaxed text-sm line-clamp-2">
+                  <p className="text-foreground/80 mb-6 leading-relaxed text-sm line-clamp-2">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-8 text-xs font-medium">
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
 
           <div className="mt-16 text-center">
-            <Link href="/portfolio" className="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 hover:text-primary transition-all">
+            <Link href="/portfolio" className="inline-flex items-center px-6 py-3 border border-border shadow-sm text-base font-medium rounded-full text-foreground/80 bg-card hover:bg-accent hover:text-primary transition-all">
               View All Projects
             </Link>
           </div>
@@ -202,100 +202,100 @@ export default function Home() {
       {/* Services Overview */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-black md:text-gray-900 mb-4">My Expertise</h2>
-          <p className="text-black md:text-gray-600">Comprehensive development and design solutions</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">My Expertise</h2>
+          <p className="text-foreground/80">Comprehensive development and design solutions</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <CodeIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Web Development</h3>
-            <p className="text-black md:text-gray-600 text-sm leading-relaxed">Custom websites built with modern technologies like React, Next.js, and TypeScript.</p>
+            <h3 className="text-lg font-bold text-foreground mb-3">Web Development</h3>
+            <p className="text-foreground/80 text-sm leading-relaxed">Custom websites built with modern technologies like React, Next.js, and TypeScript.</p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <BriefcaseIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Frontend Arch.</h3>
-            <p className="text-black md:text-gray-600 text-sm leading-relaxed">Scalable frontend architecture with performance and accessibility in mind.</p>
+            <h3 className="text-lg font-bold text-foreground mb-3">Frontend Arch.</h3>
+            <p className="text-foreground/80 text-sm leading-relaxed">Scalable frontend architecture with performance and accessibility in mind.</p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <GlobeIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Backend Systems</h3>
-            <p className="text-black md:text-gray-600 text-sm leading-relaxed">Robust API development, database design, and server management.</p>
+            <h3 className="text-lg font-bold text-foreground mb-3">Backend Systems</h3>
+            <p className="text-foreground/80 text-sm leading-relaxed">Robust API development, database design, and server management.</p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <UsersIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Full-Stack Apps</h3>
-            <p className="text-black md:text-gray-600 text-sm leading-relaxed">End-to-end application development from concept to deployment.</p>
+            <h3 className="text-lg font-bold text-foreground mb-3">Full-Stack Apps</h3>
+            <p className="text-foreground/80 text-sm leading-relaxed">End-to-end application development from concept to deployment.</p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <ShieldCheckIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Quality Assurance</h3>
-            <p className="text-black md:text-gray-600 text-sm leading-relaxed">Rigorous testing methodologies to ensure bug-free and smooth software performance.</p>
+            <h3 className="text-lg font-bold text-foreground mb-3">Quality Assurance</h3>
+            <p className="text-foreground/80 text-sm leading-relaxed">Rigorous testing methodologies to ensure bug-free and smooth software performance.</p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
               <PaletteIcon className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-black md:text-gray-900 mb-3">Logo & Flyer Design</h3>
-            <p className="text-black md:text-gray-600 text-sm leading-relaxed">Creative visual identity solutions, crafting memorable logos and impactful flyers.</p>
+            <h3 className="text-lg font-bold text-foreground mb-3">Logo & Flyer Design</h3>
+            <p className="text-foreground/80 text-sm leading-relaxed">Creative visual identity solutions, crafting memorable logos and impactful flyers.</p>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-accent/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-16 text-center">What people say</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-16 text-center">What people say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+            <div className="p-8 bg-card rounded-2xl shadow-sm border border-border">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">S</div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Sarah Chen</h4>
-                  <p className="text-xs text-gray-500 uppercase tracking-wide">Founder @ TechStart</p>
+                  <h4 className="font-bold text-foreground">Sarah Chen</h4>
+                  <p className="text-xs text-foreground/60 uppercase tracking-wide">Founder @ TechStart</p>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed italic">
+              <p className="text-foreground/70 leading-relaxed italic">
                 &quot;Bhra transformed our idea into a beautiful, functional product. His attention to detail and technical expertise are unmatched. The delivery was flawless.&quot;
               </p>
             </div>
 
-            <div className="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+            <div className="p-8 bg-card rounded-2xl shadow-sm border border-border">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">M</div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Michael Rodriguez</h4>
-                  <p className="text-xs text-gray-500 uppercase tracking-wide">CEO @ ShopFlow</p>
+                  <h4 className="font-bold text-foreground">Michael Rodriguez</h4>
+                  <p className="text-xs text-foreground/60 uppercase tracking-wide">CEO @ ShopFlow</p>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed italic">
+              <p className="text-foreground/70 leading-relaxed italic">
                 &quot;Professional, reliable, and delivers exceptional results. Our new website has significantly increased our online sales and customer retention.&quot;
               </p>
             </div>
 
-            <div className="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+            <div className="p-8 bg-card rounded-2xl shadow-sm border border-border">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg">E</div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Emily Watson</h4>
-                  <p className="text-xs text-gray-500 uppercase tracking-wide">Director @ CreativeGrowth</p>
+                  <h4 className="font-bold text-foreground">Emily Watson</h4>
+                  <p className="text-xs text-foreground/60 uppercase tracking-wide">Director @ CreativeGrowth</p>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed italic">
+              <p className="text-foreground/70 leading-relaxed italic">
                 &quot;Bhra&apos;s work exceeded our expectations. The website is fast, beautiful, and has helped us attract more clients. Highly recommended!&quot;
               </p>
             </div>
@@ -307,22 +307,22 @@ export default function Home() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 -z-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold text-black md:text-gray-900 mb-6">
+          <h3 className="text-3xl font-bold text-foreground mb-6">
             Ready to start your next project?
           </h3>
-          <p className="text-black md:text-gray-600 mb-10 max-w-xl mx-auto text-lg">
+          <p className="text-foreground/80 mb-10 max-w-xl mx-auto text-lg">
             Get the latest insights on web development, design trends, and project case studies directly to your inbox.
           </p>
           <form className="max-w-md mx-auto relative">
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 p-4 sm:p-2 bg-gray-900 sm:bg-white rounded-2xl sm:rounded-full shadow-lg border border-gray-700 sm:border-gray-100">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 p-4 sm:p-2 bg-background rounded-2xl sm:rounded-full shadow-lg border border-border">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-6 py-4 sm:py-3 bg-transparent border-none focus:ring-0 text-white sm:text-gray-900 placeholder-gray-400 outline-none w-full"
+                className="flex-1 px-6 py-4 sm:py-3 bg-transparent border-none focus:ring-0 text-foreground placeholder-foreground/40 outline-none w-full"
               />
               <button
                 type="submit"
-                className="px-8 py-4 sm:py-3 bg-primary text-white font-medium rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg w-full sm:w-auto"
+                className="px-8 py-4 sm:py-3 bg-primary text-primary-foreground font-medium rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg w-full sm:w-auto"
               >
                 Subscribe
               </button>

@@ -98,8 +98,8 @@ export default async function BlogPost({ params }: Props) {
           return (
                <div className="min-h-screen flex items-center justify-center">
                     <div className="text-center">
-                         <h1 className="text-4xl font-bold text-gray-900 mb-4">Post Not Found</h1>
-                         <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+                         <h1 className="text-4xl font-bold text-foreground mb-4">Post Not Found</h1>
+                         <p className="text-foreground/70 mb-8">The blog post you're looking for doesn't exist.</p>
                          <Link href="/blog" className="text-blue-600 hover:text-blue-700 font-medium">
                               ← Back to Blog
                          </Link>
@@ -133,19 +133,19 @@ export default async function BlogPost({ params }: Props) {
                {/* Post Content */}
                <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <article className="prose prose-lg max-w-none">
-                         <p className="text-xl text-gray-600 leading-relaxed mb-8">{post.excerpt}</p>
-                         <p className="text-gray-700 leading-relaxed mb-6">{post.content}</p>
-                         <p className="text-gray-700 leading-relaxed mb-6">
+                         <p className="text-xl text-foreground/70 leading-relaxed mb-8">{post.excerpt}</p>
+                         <p className="text-foreground/80 leading-relaxed mb-6">{post.content}</p>
+                         <p className="text-foreground/80 leading-relaxed mb-6">
                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                          </p>
-                         <p className="text-gray-700 leading-relaxed mb-6">
+                         <p className="text-foreground/80 leading-relaxed mb-6">
                               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
                          </p>
                     </article>
 
                     {/* Share Section */}
-                    <div className="mt-16 pt-8 border-t border-gray-200">
-                         <h3 className="text-lg font-semibold text-gray-900 mb-4">Share this post</h3>
+                    <div className="mt-16 pt-8 border-t border-border">
+                         <h3 className="text-lg font-semibold text-foreground mb-4">Share this post</h3>
                          <div className="flex gap-4">
                               <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                                    Twitter

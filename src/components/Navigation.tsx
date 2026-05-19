@@ -28,7 +28,7 @@ export default function Navigation() {
      return (
           <nav className="fixed top-0 left-0 right-0 z-[100]">
                {/* Main Header Bar */}
-               <div className={`relative z-[110] bg-white/95 border-b border-gray-200 transition-all ${isOpen ? 'bg-white' : 'backdrop-blur-md'}`}>
+               <div className={`relative z-[110] bg-background/95 border-b border-border transition-all ${isOpen ? 'bg-card' : 'backdrop-blur-md'}`}>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                          <div className="flex justify-between items-center h-20">
                               <div className="flex items-center">
@@ -43,7 +43,7 @@ export default function Navigation() {
                                         <Link
                                              key={link.href}
                                              href={link.href}
-                                             className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                                             className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
                                         >
                                              {link.label}
                                         </Link>
@@ -61,13 +61,13 @@ export default function Navigation() {
                                    {/* Mobile Hamburger toggle */}
                                    <button
                                         onClick={() => setIsOpen(!isOpen)}
-                                        className="md:hidden relative w-12 h-12 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+                                        className="md:hidden relative w-12 h-12 flex items-center justify-center rounded-full hover:bg-accent transition-colors z-[120]"
                                         aria-label="Toggle menu"
                                    >
                                         <div className="flex flex-col gap-1.5 w-6">
-                                             <span className={`block h-0.5 bg-gray-900 transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : 'w-full'}`} />
-                                             <span className={`block h-0.5 bg-gray-900 transition-all duration-300 ${isOpen ? 'opacity-0' : 'w-full'}`} />
-                                             <span className={`block h-0.5 bg-gray-900 transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : 'w-2/3 ml-auto'}`} />
+                                             <span className={`block h-0.5 bg-foreground transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : 'w-full'}`} />
+                                             <span className={`block h-0.5 bg-foreground transition-all duration-300 ${isOpen ? 'opacity-0' : 'w-full'}`} />
+                                             <span className={`block h-0.5 bg-foreground transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : 'w-2/3 ml-auto'}`} />
                                         </div>
                                    </button>
                               </div>
@@ -75,52 +75,51 @@ export default function Navigation() {
                     </div>
                </div>
 
-               {/* Redesigned Fullscreen Mobile Menu Overlay */}
+               {/* Mobile Menu Backdrop */}
+               <div 
+                    className={`fixed inset-0 bg-foreground/10 backdrop-blur-md z-[104] md:hidden transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                    onClick={() => setIsOpen(false)}
+               />
+
+               {/* Redesigned Floating Mobile Menu */}
                <div
-                    className={`fixed inset-0 bg-white z-[105] md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+                    className={`fixed top-24 left-4 right-4 glass-card shadow-2xl border-border/50 z-[105] md:hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] origin-top ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-4 pointer-events-none'
                          }`}
                >
-                    <div className="flex flex-col h-full h-screen w-screen px-8 pt-32 pb-12 overflow-y-auto">
-                         <div className="flex flex-col space-y-6">
-                              <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Navigation</div>
+                    <div className="flex flex-col p-6 max-h-[calc(100vh-8rem)] overflow-y-auto">
+                         <div className="grid grid-cols-2 gap-3 mb-6">
                               {navLinks.map((link, index) => (
                                    <Link
                                         key={link.href}
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
                                         style={{ transitionDelay: isOpen ? `${index * 50 + 100}ms` : '0ms' }}
-                                        className={`text-4xl font-bold text-gray-900 hover:text-primary transition-all duration-500 transform ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+                                        className={`flex flex-col items-center justify-center py-5 px-4 rounded-2xl bg-accent/40 hover:bg-primary/10 border border-transparent hover:border-primary/20 text-foreground font-semibold shadow-sm transition-all duration-500 transform ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                                    >
                                         {link.label}
                                    </Link>
                               ))}
                          </div>
 
-                         <div className="mt-auto space-y-12">
-                              <div>
-                                   <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Contact & Social</div>
-                                   <div className="flex flex-col space-y-4">
-                                        <a href="mailto:contact@atangajoseph.com" className="text-xl font-medium text-gray-800 hover:text-primary transition-colors">
-                                             contact@atangajoseph.com
+                         <div className="bg-accent/40 rounded-3xl p-5 space-y-5 mt-auto">
+                              <div className="text-xs font-bold uppercase tracking-widest text-foreground/50 text-center">Let's Connect</div>
+                              <div className="flex justify-center gap-4">
+                                   {['Twitter', 'LinkedIn', 'GitHub'].map((social, index) => (
+                                        <a
+                                             key={social}
+                                             href="#"
+                                             style={{ transitionDelay: isOpen ? `${index * 50 + 300}ms` : '0ms' }}
+                                             className={`w-12 h-12 rounded-full bg-background flex items-center justify-center text-foreground hover:text-primary hover:scale-110 shadow-sm transition-all duration-500 transform ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+                                        >
+                                             {social[0]}
                                         </a>
-                                        <div className="flex gap-6">
-                                             {['Twitter', 'LinkedIn', 'GitHub'].map((social) => (
-                                                  <a
-                                                       key={social}
-                                                       href="#"
-                                                       className="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-                                                  >
-                                                       {social}
-                                                  </a>
-                                             ))}
-                                        </div>
-                                   </div>
+                                   ))}
                               </div>
-
                               <Link
                                    href="/contact"
                                    onClick={() => setIsOpen(false)}
-                                   className="block w-full text-center px-8 py-5 text-lg font-bold text-white bg-primary rounded-2xl hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/20"
+                                   style={{ transitionDelay: isOpen ? '450ms' : '0ms' }}
+                                   className={`block w-full text-center px-6 py-4 text-sm font-bold text-primary-foreground bg-primary rounded-2xl hover:bg-blue-600 transition-all duration-500 transform shadow-lg shadow-blue-500/20 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                               >
                                    Start a Project
                               </Link>

@@ -87,7 +87,7 @@ export default function Blog() {
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
                         The <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Blog</span>
                     </h1>
-                    <p className="text-xl text-white md:text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
                         Thoughts on web development, technology, and building digital products.
                     </p>
                 </div>
@@ -97,7 +97,7 @@ export default function Blog() {
             <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogPosts.map((post) => (
-                        <article key={post.id} className="glass-card group overflow-hidden bg-white/60">
+                        <article key={post.id} className="glass-card group overflow-hidden bg-card/60">
                             <div className={`h-48 bg-gradient-to-br ${post.gradient} relative overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <span className="text-white/30 text-7xl font-bold">{post.title.charAt(0)}</span>
@@ -111,11 +111,11 @@ export default function Blog() {
                                 </div>
                             </div>
                             <div className="p-8">
-                                <p className="text-xs text-white md:text-gray-500 mb-3">{post.date}</p>
-                                <h2 className="text-lg font-bold text-white md:text-gray-900 mb-3 group-hover:text-primary transition-colors leading-snug">
+                                <p className="text-xs text-foreground/80 mb-3">{post.date}</p>
+                                <h2 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">
                                     {post.title}
                                 </h2>
-                                <p className="text-white md:text-gray-600 mb-6 leading-relaxed text-sm">{post.excerpt}</p>
+                                <p className="text-foreground/80 mb-6 leading-relaxed text-sm">{post.excerpt}</p>
                                 <Link
                                     href={`/blog/${post.id}`}
                                     className="inline-flex items-center text-primary font-semibold hover:text-blue-700 group-hover:translate-x-1 transition-all text-sm"
@@ -131,18 +131,18 @@ export default function Blog() {
             {/* Newsletter */}
             <section className="py-20 bg-accent/30">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white md:text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                         Subscribe to My Newsletter
                     </h2>
-                    <p className="text-white md:text-gray-600 mb-10 max-w-xl mx-auto text-lg">
+                    <p className="text-foreground/80 mb-10 max-w-xl mx-auto text-lg">
                         Get the latest articles and insights delivered directly to your inbox.
                     </p>
                     <form className="max-w-md mx-auto relative">
-                        <div className="flex flex-col sm:flex-row gap-4 p-2 bg-white rounded-full shadow-lg border border-gray-100">
+                        <div className="flex flex-col sm:flex-row gap-4 p-2 bg-card rounded-full shadow-lg border border-border">
                             <input
                                 type="email"
                                 placeholder="Enter your email address"
-                                className="flex-1 px-6 py-3 bg-transparent border-none focus:ring-0 text-gray-900 placeholder-gray-400 outline-none"
+                                className="flex-1 px-6 py-3 bg-transparent border-none focus:ring-0 text-foreground placeholder-gray-400 outline-none"
                             />
                             <button
                                 type="submit"
