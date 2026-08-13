@@ -36,7 +36,7 @@ export default function Footer() {
                                    <li><Link href="/services" className="text-slate-400 hover:text-blue-400 transition-colors">Backend Development</Link></li>
                                    <li><Link href="/services" className="text-slate-400 hover:text-blue-400 transition-colors">Full-Stack Applications</Link></li>
                                    <li><Link href="/services" className="text-slate-400 hover:text-blue-400 transition-colors">Quality Assurance</Link></li>
-                                   <li><Link href="/services" className="text-slate-400 hover:text-blue-400 transition-colors">Logo & Flyer Design</Link></li>
+
                               </ul>
                          </div>
 

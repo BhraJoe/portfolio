@@ -74,6 +74,17 @@ const projects = [
         tagColor: 'bg-cyan-100/50 text-cyan-700',
         link: 'https://mobile-banking-app-opal.vercel.app/',
     },
+    {
+        id: 7,
+        title: 'Restaurant Website',
+        category: 'Restaurant',
+        description: 'Elegant restaurant website with online reservation system, menu showcase, and modern design.',
+        tech: ['Next.js', 'Tailwind', 'Vercel'],
+        image: '/images/projects/restaurant.svg',
+        gradient: 'from-orange-500 to-red-600',
+        tagColor: 'bg-orange-100/50 text-orange-700',
+        link: 'https://rodziny-restauracja.vercel.app/',
+    },
 ];
 
 function ArrowRightIcon({ className }: { className?: string }) {

@@ -72,13 +72,7 @@ const services = [
         icon: '✅',
         gradient: 'from-green-500 to-lime-600',
     },
-    {
-        title: 'Logo & Flyer Design',
-        description: 'Creative visual identity solutions, crafting memorable logos and impactful flyers.',
-        benefits: ['Custom Logos', 'Brand Identity', 'Print-Ready Flyers', 'Modern Aesthetics'],
-        icon: '✏️',
-        gradient: 'from-violet-500 to-purple-600',
-    },
+
 ];
 
 const process = [

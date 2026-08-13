@@ -96,6 +96,17 @@ const featuredProjects = [
     link: 'https://professional-corporate-website.vercel.app/',
 
   },
+  {
+    id: 4,
+    title: 'Restaurant Website',
+    category: 'Restaurant',
+    description: 'Elegant restaurant website with online reservation system, menu showcase, and modern design.',
+        tech: ['Next.js', 'Tailwind', 'Vercel'],
+        image: '/images/projects/restaurant.svg',
+        tagColor: 'bg-orange-100/50 text-orange-700',
+        link: 'https://rodziny-restauracja.vercel.app/',
+
+      },
 ];
 
 export default function Home() {
@@ -246,13 +257,7 @@ export default function Home() {
             <p className="text-foreground/80 text-sm leading-relaxed">Rigorous testing methodologies to ensure bug-free and smooth software performance.</p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
-              <PaletteIcon className="h-7 w-7 text-primary" />
-            </div>
-            <h3 className="text-lg font-bold text-foreground mb-3">Logo & Flyer Design</h3>
-            <p className="text-foreground/80 text-sm leading-relaxed">Creative visual identity solutions, crafting memorable logos and impactful flyers.</p>
-          </div>
+
         </div>
       </section>
 
