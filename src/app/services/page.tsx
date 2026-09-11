@@ -27,49 +27,49 @@ const services = [
         title: 'Website Development',
         description: 'Custom websites tailored to your business needs. Modern, fast, and SEO-friendly.',
         benefits: ['Responsive Design', 'SEO Optimized', 'Fast Loading', 'Custom Branding'],
-        icon: '🌐',
+        iconName: 'globe',
         gradient: 'from-blue-500 to-indigo-600',
     },
     {
         title: 'Frontend Development',
         description: 'Build interactive and responsive user interfaces that engage your customers.',
         benefits: ['React/Next.js', 'Responsive Layouts', 'Interactive Animations', 'Accessibility'],
-        icon: '🎨',
+        iconName: 'palette',
         gradient: 'from-purple-500 to-fuchsia-600',
     },
     {
         title: 'Backend Development',
         description: 'Robust server-side applications and APIs to power your digital products.',
         benefits: ['RESTful APIs', 'Database Design', 'Authentication', 'Cloud Deployment'],
-        icon: '⚙️',
+        iconName: 'cog',
         gradient: 'from-emerald-500 to-teal-600',
     },
     {
         title: 'Full-Stack Applications',
         description: 'End-to-end web solutions from concept to deployment and beyond.',
         benefits: ['MERN Stack', 'Next.js Full-Stack', 'Real-time Features', 'Scalable Architecture'],
-        icon: '🚀',
+        iconName: 'rocket',
         gradient: 'from-amber-500 to-orange-600',
     },
     {
         title: 'Website Maintenance',
         description: 'Ongoing support to keep your website running smoothly and securely.',
         benefits: ['Security Updates', 'Performance Optimization', 'Content Updates', 'Technical Support'],
-        icon: '🛡️',
+        iconName: 'shield',
         gradient: 'from-rose-500 to-pink-600',
     },
     {
         title: 'E-commerce Solutions',
         description: 'Online stores that drive sales and provide excellent shopping experiences.',
         benefits: ['Payment Integration', 'Inventory Management', 'User Dashboard', 'Mobile Optimized'],
-        icon: '🛒',
+        iconName: 'shoppingCart',
         gradient: 'from-cyan-500 to-blue-600',
     },
     {
         title: 'Quality Assurance',
         description: 'Rigorous testing methodologies to ensure bug-free and smooth software performance.',
         benefits: ['Automated Testing', 'Manual QA', 'Performance Check', 'Bug Tracking'],
-        icon: '✅',
+        iconName: 'checkCircle',
         gradient: 'from-green-500 to-lime-600',
     },
 
@@ -81,6 +81,41 @@ const process = [
     { step: '03', title: 'Development', description: 'Building your project with clean code, best practices, and regular updates.' },
     { step: '04', title: 'Launch & Support', description: 'Deploying your project and providing ongoing maintenance and support.' },
 ];
+
+function ServiceIcon({ name, className }: { name: string; className?: string }) {
+    switch (name) {
+        case 'globe':
+            return (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            );
+        case 'palette':
+            return (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+            );
+        case 'cog':
+            return (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            );
+        case 'rocket':
+            return (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            );
+        case 'shield':
+            return (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+            );
+        case 'shoppingCart':
+            return (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            );
+        case 'checkCircle':
+            return (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            );
+        default:
+            return null;
+    }
+}
 
 export default function Services() {
     return (
@@ -109,8 +144,8 @@ export default function Services() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {services.map((service) => (
                         <div key={service.title} className="glass-card p-8 bg-card/60 group">
-                            <div className={`w-14 h-14 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-6 text-2xl shadow-lg`}>
-                                {service.icon}
+                            <div className={`w-14 h-14 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
+                                <ServiceIcon name={service.iconName} className="text-white" />
                             </div>
                             <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                                 {service.title}

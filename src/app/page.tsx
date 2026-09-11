@@ -275,7 +275,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-foreground/70 leading-relaxed italic">
-                &quot;Bhra transformed our idea into a beautiful, functional product. His attention to detail and technical expertise are unmatched. The delivery was flawless.&quot;
+                    &quot;Atanga transformed our idea into a beautiful, functional product. His attention to detail and technical expertise are unmatched. The delivery was flawless and the app now serves thousands of daily active users.&quot;
               </p>
             </div>
 
@@ -288,7 +288,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-foreground/70 leading-relaxed italic">
-                &quot;Professional, reliable, and delivers exceptional results. Our new website has significantly increased our online sales and customer retention.&quot;
+                    &quot;Professional, reliable, and delivers exceptional results. Our new website has significantly increased our online sales — we saw a 40% lift in conversion within the first month of launch.&quot;
               </p>
             </div>
 
@@ -301,7 +301,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-foreground/70 leading-relaxed italic">
-                &quot;Bhra&apos;s work exceeded our expectations. The website is fast, beautiful, and has helped us attract more clients. Highly recommended!&quot;
+                    &quot;Atanga's work exceeded our expectations. The new platform is fast, beautiful, and has helped us attract 3x more clients. Highly recommended for any design or development work.&quot;
               </p>
             </div>
           </div>

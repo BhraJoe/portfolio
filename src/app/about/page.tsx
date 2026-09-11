@@ -22,10 +22,10 @@ const skills = [
 ];
 
 const stats = [
-    { value: '50+', label: 'Projects Completed', icon: '🚀' },
-    { value: '30+', label: 'Happy Clients', icon: '😊' },
-    { value: '5+', label: 'Years Experience', icon: '⭐' },
-    { value: '99%', label: 'Client Satisfaction', icon: '💯' },
+    { value: '50+', label: 'Projects Completed', icon: 'rocket' },
+    { value: '30+', label: 'Happy Clients', icon: 'users' },
+    { value: '5+', label: 'Years Experience', icon: 'star' },
+    { value: '99%', label: 'Client Satisfaction', icon: 'badge' },
 ];
 
 function ArrowRightIcon({ className }: { className?: string }) {
@@ -98,7 +98,20 @@ export default function About() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {stats.map((stat) => (
                             <div key={stat.label} className="text-center p-6 glass-card bg-card/60">
-                                <div className="text-3xl mb-3">{stat.icon}</div>
+                                <div className="flex justify-center mb-3">
+                                    {stat.icon === 'rocket' && (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                                    )}
+                                    {stat.icon === 'users' && (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    )}
+                                    {stat.icon === 'star' && (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    )}
+                                    {stat.icon === 'badge' && (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                                    )}
+                                </div>
                                 <h3 className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</h3>
                                 <p className="text-foreground/80 text-sm">{stat.label}</p>
                             </div>

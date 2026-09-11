@@ -44,7 +44,7 @@ const projects = [
     {
         id: 4,
         title: 'Real Estate Platform',
-        category: 'E-commerce',
+        category: 'Real Estate',
         description: 'Property listing platform with advanced search, virtual tours, and agent management.',
         tech: ['Next.js', 'Firebase', 'Stripe'],
         image: '/images/projects/real_estate.png',

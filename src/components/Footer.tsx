@@ -10,11 +10,11 @@ export default function Footer() {
                               <p className="text-slate-400 mb-6 leading-relaxed">
                                    Professional Web & Software Developer crafting digital experiences that perform.
                               </p>
-                              <div className="flex space-x-4">
-                                   <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">Twitter</a>
-                                   <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">LinkedIn</a>
-                                   <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">Instagram</a>
-                              </div>
+                               <div className="flex space-x-4">
+                                    <a href="https://twitter.com/atangajoseph" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">Twitter</a>
+                                    <a href="https://linkedin.com/in/atanga-joseph" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">LinkedIn</a>
+                                    <a href="https://instagram.com/atanga.joseph" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">Instagram</a>
+                               </div>
                          </div>
 
                          <div>
