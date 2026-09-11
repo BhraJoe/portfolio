@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">6. Contact Us</h2>
             <p className="mb-4">
-              If you have any questions about this Privacy Policy, please contact us at hello@atangajoseph.com.
+              If you have any questions about this Privacy Policy, please contact us at josephatanga25@gmail.com.
             </p>
           </section>
         </div>

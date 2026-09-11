@@ -43,7 +43,7 @@ export default function Footer() {
                          <div>
                               <h4 className="text-lg font-semibold mb-6 text-slate-200">Contact</h4>
                               <p className="text-slate-400 mb-4">Ready to start? Reach out.</p>
-                              <a href="mailto:hello@atangajoseph.com" className="text-xl font-medium text-white hover:text-blue-400 transition-colors">hello@atangajoseph.com</a>
+                              <a href="mailto:josephatanga25@gmail.com" className="text-xl font-medium text-white hover:text-blue-400 transition-colors">josephatanga25@gmail.com</a>
                          </div>
                     </div>
 
