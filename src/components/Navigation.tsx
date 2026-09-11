@@ -28,7 +28,7 @@ export default function Navigation() {
      return (
           <nav className="fixed top-0 left-0 right-0 z-[100]">
                {/* Main Header Bar */}
-               <div className={`relative z-[110] bg-background/95 border-b border-border transition-all ${isOpen ? 'bg-card' : 'backdrop-blur-md'}`}>
+               <div className="relative z-[110] bg-background/95 border-b border-border backdrop-blur-md">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                          <div className="flex justify-between items-center h-20">
                               <div className="flex items-center">
@@ -75,55 +75,28 @@ export default function Navigation() {
                     </div>
                </div>
 
-               {/* Mobile Menu Backdrop */}
-               <div 
-                    className={`fixed inset-0 bg-foreground/10 backdrop-blur-md z-[104] md:hidden transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-                    onClick={() => setIsOpen(false)}
-               />
-
-               {/* Redesigned Floating Mobile Menu */}
+               {/* Simple Mobile Menu */}
                <div
-                    className={`fixed top-24 left-4 right-4 glass-card shadow-2xl border-border/50 z-[105] md:hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] origin-top ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-4 pointer-events-none'
-                         }`}
+                    className={`fixed top-20 left-0 right-0 bg-background border-b border-border z-[105] md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 max-h-96' : 'opacity-0 -translate-y-full max-h-0 pointer-events-none'}`}
                >
-                    <div className="flex flex-col p-6 max-h-[calc(100vh-8rem)] overflow-y-auto">
-                         <div className="grid grid-cols-2 gap-3 mb-6">
-                              {navLinks.map((link, index) => (
-                                   <Link
-                                        key={link.href}
-                                        href={link.href}
-                                        onClick={() => setIsOpen(false)}
-                                        style={{ transitionDelay: isOpen ? `${index * 50 + 100}ms` : '0ms' }}
-                                        className={`flex flex-col items-center justify-center py-5 px-4 rounded-2xl bg-accent/40 hover:bg-primary/10 border border-transparent hover:border-primary/20 text-foreground font-semibold shadow-sm transition-all duration-500 transform ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-                                   >
-                                        {link.label}
-                                   </Link>
-                              ))}
-                         </div>
-
-                         <div className="bg-accent/40 rounded-3xl p-5 space-y-5 mt-auto">
-                              <div className="text-xs font-bold uppercase tracking-widest text-foreground/50 text-center">Let's Connect</div>
-                              <div className="flex justify-center gap-4">
-                                   {['Twitter', 'LinkedIn', 'GitHub'].map((social, index) => (
-                                        <a
-                                             key={social}
-                                             href="#"
-                                             style={{ transitionDelay: isOpen ? `${index * 50 + 300}ms` : '0ms' }}
-                                             className={`w-12 h-12 rounded-full bg-background flex items-center justify-center text-foreground hover:text-primary hover:scale-110 shadow-sm transition-all duration-500 transform ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-                                        >
-                                             {social[0]}
-                                        </a>
-                                   ))}
-                              </div>
+                    <div className="px-4 py-4 space-y-1">
+                         {navLinks.map((link) => (
                               <Link
-                                   href="/contact"
+                                   key={link.href}
+                                   href={link.href}
                                    onClick={() => setIsOpen(false)}
-                                   style={{ transitionDelay: isOpen ? '450ms' : '0ms' }}
-                                   className={`block w-full text-center px-6 py-4 text-sm font-bold text-primary-foreground bg-primary rounded-2xl hover:bg-blue-600 transition-all duration-500 transform shadow-lg shadow-blue-500/20 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+                                   className="block px-4 py-3 text-base font-medium text-foreground/80 hover:text-primary hover:bg-accent rounded-lg transition-colors"
                               >
-                                   Start a Project
+                                   {link.label}
                               </Link>
-                         </div>
+                         ))}
+                         <Link
+                              href="/contact"
+                              onClick={() => setIsOpen(false)}
+                              className="block w-full text-center px-4 py-3 mt-2 text-base font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-blue-600 transition-colors"
+                         >
+                              Work with me
+                         </Link>
                     </div>
                </div>
           </nav>
