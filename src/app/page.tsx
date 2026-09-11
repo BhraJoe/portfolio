@@ -102,7 +102,7 @@ const featuredProjects = [
     category: 'Restaurant',
     description: 'Elegant restaurant website with online reservation system, menu showcase, and modern design.',
         tech: ['Next.js', 'Tailwind', 'Vercel'],
-        image: '/images/projects/restaurant.svg',
+        image: '/images/projects/restaurant.png',
         tagColor: 'bg-orange-100/50 text-orange-700',
         link: 'https://rodziny-restauracja.vercel.app/',
 
