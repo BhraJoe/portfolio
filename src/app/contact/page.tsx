@@ -1,10 +1,12 @@
 'use client';
-import Link from 'next/link';
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 function MailIcon({ className }: { className?: string }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-            <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
         </svg>
     );
 }
@@ -12,7 +14,8 @@ function MailIcon({ className }: { className?: string }) {
 function MapPinIcon({ className }: { className?: string }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
         </svg>
     );
 }
@@ -20,7 +23,24 @@ function MapPinIcon({ className }: { className?: string }) {
 function ClockIcon({ className }: { className?: string }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-            <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+        </svg>
+    );
+}
+
+function CheckIcon({ className }: { className?: string }) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+            <path d="M20 6L9 17l-5-5" />
+        </svg>
+    );
+}
+
+function XIcon({ className }: { className?: string }) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+            <path d="M18 6L6 18M6 6l12 12" />
         </svg>
     );
 }
@@ -58,7 +78,7 @@ const socials = [
     {
         name: 'LinkedIn',
         href: 'https://linkedin.com/in/atanga-joseph',
-        path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z',
+        path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063c0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z',
     },
     {
         name: 'GitHub',
@@ -68,6 +88,41 @@ const socials = [
 ];
 
 export default function Contact() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+        if (!serviceId || !templateId || !publicKey) {
+            console.error('EmailJS environment variables are not configured');
+            setSubmitStatus('error');
+            setIsSubmitting(false);
+            return;
+        }
+
+        emailjs.init(publicKey);
+
+        const form = e.currentTarget;
+
+        try {
+            await emailjs.sendForm(serviceId, templateId, form);
+            setSubmitStatus('success');
+            form.reset();
+        } catch (err) {
+            console.error('Failed to send email:', err);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <div className="min-h-screen">
             {/* Page Header */}
@@ -142,32 +197,44 @@ export default function Contact() {
                     {/* Contact Form */}
                     <div className="lg:col-span-3">
                         <div className="glass-card p-8 md:p-10 bg-card/70">
-                            <form className="space-y-6">
+                            <form onSubmit={sendEmail} className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-foreground/80 mb-2">Full Name *</label>
+                                        <label htmlFor="user_name" className="block text-sm font-medium text-foreground/80 mb-2">Full Name *</label>
                                         <input
                                             type="text"
+                                            id="user_name"
+                                            name="user_name"
                                             placeholder="John Doe"
                                             required
-                                            className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground placeholder-gray-400"
+                                            disabled={isSubmitting}
+                                            className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground placeholder-gray-400 disabled:opacity-50"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-foreground/80 mb-2">Email Address *</label>
+                                        <label htmlFor="user_email" className="block text-sm font-medium text-foreground/80 mb-2">Email Address *</label>
                                         <input
                                             type="email"
+                                            id="user_email"
+                                            name="user_email"
                                             placeholder="john@example.com"
                                             required
-                                            className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground placeholder-gray-400"
+                                            disabled={isSubmitting}
+                                            className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground placeholder-gray-400 disabled:opacity-50"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-foreground/80 mb-2">Project Type *</label>
-                                        <select className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground">
+                                        <label htmlFor="project_type" className="block text-sm font-medium text-foreground/80 mb-2">Project Type *</label>
+                                        <select
+                                            id="project_type"
+                                            name="project_type"
+                                            required
+                                            disabled={isSubmitting}
+                                            className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground disabled:opacity-50"
+                                        >
                                             <option value="">Select project type</option>
                                             <option>Website Development</option>
                                             <option>Web Application</option>
@@ -177,20 +244,30 @@ export default function Contact() {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-foreground/80 mb-2">Budget Range</label>
-                                        <select className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground">
+                                        <label htmlFor="budget_range" className="block text-sm font-medium text-foreground/80 mb-2">Budget Range</label>
+                                        <select
+                                            id="budget_range"
+                                            name="budget_range"
+                                            disabled={isSubmitting}
+                                            className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground disabled:opacity-50"
+                                        >
                                             <option value="">Select budget</option>
-                                            <option>GH₵1,000 - GH₵5,000</option>
-                                            <option>GH₵5,000 - GH₵10,000</option>
-                                            <option>GH₵10,000 - GH₵25,000</option>
-                                            <option>GH₵25,000+</option>
+                                            <option>GH\u20B5 1,000 - GH\u20B5 5,000</option>
+                                            <option>GH\u20B5 5,000 - GH\u20B5 10,000</option>
+                                            <option>GH\u20B5 10,000 - GH\u20B5 25,000</option>
+                                            <option>GH\u20B5 25,000+</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-foreground/80 mb-2">Timeline</label>
-                                    <select className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground">
+                                    <label htmlFor="timeline" className="block text-sm font-medium text-foreground/80 mb-2">Timeline</label>
+                                    <select
+                                        id="timeline"
+                                        name="timeline"
+                                        disabled={isSubmitting}
+                                        className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground disabled:opacity-50"
+                                    >
                                         <option value="">Select timeline</option>
                                         <option>ASAP</option>
                                         <option>1-2 months</option>
@@ -201,20 +278,48 @@ export default function Contact() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-foreground/80 mb-2">Project Description *</label>
+                                    <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">Project Description *</label>
                                     <textarea
+                                        id="message"
+                                        name="message"
                                         placeholder="Tell me about your project, goals, and any specific requirements..."
                                         required
                                         rows={5}
-                                        className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground placeholder-gray-400 resize-none"
+                                        disabled={isSubmitting}
+                                        className="w-full px-4 py-3.5 bg-card/50 border border-border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-foreground placeholder-gray-400 resize-none disabled:opacity-50"
                                     />
                                 </div>
 
+                                {submitStatus === 'success' && (
+                                    <div className="flex items-center gap-3 p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-600">
+                                        <CheckIcon className="w-5 h-5" />
+                                        <span className="font-medium">Your message has been sent! I&apos;ll get back to you within 24 hours.</span>
+                                    </div>
+                                )}
+
+                                {submitStatus === 'error' && (
+                                    <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-600">
+                                        <XIcon className="w-5 h-5" />
+                                        <span className="font-medium">Something went wrong. Please try again or email me directly at josephatanga25@gmail.com.</span>
+                                    </div>
+                                )}
+
                                 <button
                                     type="submit"
-                                    className="w-full py-4 bg-primary text-white font-semibold rounded-full hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30 text-base"
+                                    disabled={isSubmitting}
+                                    className="w-full py-4 bg-primary text-white font-semibold rounded-full hover:bg-blue-700 disabled:opacity-50 transition-all shadow-lg hover:shadow-blue-500/30 text-base flex items-center justify-center gap-2"
                                 >
-                                    Send Message
+                                    {isSubmitting ? (
+                                        <>
+                                            <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        'Send Message'
+                                    )}
                                 </button>
                             </form>
                         </div>
