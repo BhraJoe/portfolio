@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ const blogPosts = [
         category: 'Development',
         date: '2025-06-15',
         readTime: '8 min read',
+        image: '/images/blog/nextjs-scalable.jpg',
         gradient: 'from-blue-600 to-indigo-700',
     },
     {
@@ -31,6 +33,7 @@ const blogPosts = [
         category: 'Technology',
         date: '2025-06-10',
         readTime: '6 min read',
+        image: '/images/blog/future-web.jpg',
         gradient: 'from-purple-600 to-fuchsia-700',
     },
     {
@@ -40,6 +43,7 @@ const blogPosts = [
         category: 'Development',
         date: '2025-06-05',
         readTime: '10 min read',
+        image: '/images/blog/react-performance.jpg',
         gradient: 'from-emerald-500 to-teal-600',
     },
     {
@@ -49,6 +53,7 @@ const blogPosts = [
         category: 'Business',
         date: '2025-06-01',
         readTime: '5 min read',
+        image: '/images/blog/business-website.jpg',
         gradient: 'from-amber-500 to-orange-600',
     },
     {
@@ -58,6 +63,7 @@ const blogPosts = [
         category: 'Development',
         date: '2025-05-20',
         readTime: '12 min read',
+        image: '/images/blog/typescript.jpg',
         gradient: 'from-rose-500 to-pink-600',
     },
     {
@@ -67,6 +73,7 @@ const blogPosts = [
         category: 'Business',
         date: '2025-05-15',
         readTime: '7 min read',
+        image: '/images/blog/web-stack.jpg',
         gradient: 'from-cyan-500 to-blue-600',
     },
 ];
@@ -98,10 +105,14 @@ export default function Blog() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogPosts.map((post) => (
                         <article key={post.id} className="glass-card group overflow-hidden bg-card/60">
-                            <div className={`h-48 bg-gradient-to-br ${post.gradient} relative overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <span className="text-white/30 text-7xl font-bold">{post.title.charAt(0)}</span>
-                                </div>
+                            <div className="h-48 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
                                 <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
                                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
